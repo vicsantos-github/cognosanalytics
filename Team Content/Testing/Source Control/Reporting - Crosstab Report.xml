@@ -106,6 +106,7 @@
                           <defaultStyles>
                             <defaultStyle refStyle="ml"/>
                           </defaultStyles>
+                          <CSS value="background-color:#0F62FE"/>
                         </style>
                         <contents>
                           <textItem>
