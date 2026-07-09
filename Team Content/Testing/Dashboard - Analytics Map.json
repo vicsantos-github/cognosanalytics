@@ -1,0 +1,747 @@
+{
+  "name" : "Dashboard - Analytics Map",
+  "theme" : "defaultTheme",
+  "version" : 3600,
+  "eventGroups" : [ {
+    "id" : "model00000177f1294f99_00000000:1",
+    "widgetIds" : [ "model00000177f12a1f52_00000000", "model00000177f12f296a_00000000", "model00000177f12fb4af_00000000", "model00000177f13103ca_00000000", "model00000177f1328ce2_00000000" ]
+  } ],
+  "properties" : {
+    "customColors" : {
+      "colors" : [ ]
+    },
+    "defaultLocale" : "Default",
+    "fredIsRed" : true,
+    "responsiveLayoutPaddings" : {
+      "horizontal" : 0,
+      "vertical" : 0
+    },
+    "responsiveLayoutMargins" : {
+      "vertical" : 0,
+      "horizontal" : 0
+    },
+    "showFooter" : false
+  },
+  "drillThrough" : [ {
+    "id" : "model00000177f1386135_00000000",
+    "name" : "Dashboard- Analytics Map (Drill Through Target Report)",
+    "type" : "report",
+    "assetId" : "i1ED69D8867DC419394AA1306C737247D",
+    "assetSearchPath" : "/content/folder[@name='Training']/folder[@name='Analytics Explorer Training Solutions']/report[@name='Dashboard- Analytics Map (Drill Through Target Report)']",
+    "scope" : "connection",
+    "modelRefs" : [ "model00000177f1295fba_00000002" ],
+    "mappings" : [ {
+      "name" : "pState",
+      "modelFilterItem" : "[C].[C_Australian_Towns_Data_Module].[Australian_Towns_Revenue_csv].[State_]",
+      "type" : "xsdString",
+      "capabilities" : [ "discreteValue" ],
+      "mapTo" : "Australian_Towns_Revenue_csv.State_"
+    } ],
+    "ownerId" : "model00000177f12f296a_00000000",
+    "perspective" : "authoring",
+    "eventGroupId" : "model00000177f1294f99_00000000:1"
+  } ],
+  "fredIsRed" : {
+    "id" : "model00000177f1294f94_00000000",
+    "colorMap" : { },
+    "saveId" : 5
+  },
+  "pageContext" : [ {
+    "origin" : "visualization",
+    "table" : "",
+    "alias" : "0",
+    "sourceId" : "model00000177f1295fba_00000002",
+    "hierarchies" : [ {
+      "hierarchyUniqueName" : "Australian_Towns_Revenue_csv.State_"
+    } ],
+    "scope" : "model00000177f1294f99_00000000",
+    "hierarchyUniqueNames" : [ "Australian_Towns_Revenue_csv.State_" ],
+    "eventSourceId" : "model00000177f12f296a_00000000",
+    "eventGroupId" : "model00000177f1294f99_00000000:1",
+    "tupleSet" : "{\"Australian_Towns_Revenue_csv.State_->[QLD]\":{\"u\":\"Australian_Towns_Revenue_csv.State_->[QLD]\",\"d\":\"QLD\"}}"
+  } ],
+  "dataSources" : {
+    "version" : "1.0",
+    "sources" : [ {
+      "id" : "model00000177f1295fba_00000002",
+      "assetId" : "iE63C7D9C286341DFA2CD3883D135A23E",
+      "type" : "module",
+      "name" : "Australian Towns Data Module",
+      "shaping" : {
+        "references" : { },
+        "embeddedModuleUpToDate" : true
+      }
+    } ]
+  },
+  "layout" : {
+    "id" : "model00000177f1294f97_00000000",
+    "style" : {
+      "height" : "100%"
+    },
+    "type" : "tab",
+    "showGrid" : true,
+    "snapGrid" : true,
+    "snapObjects" : true,
+    "pageSize" : {
+      "width" : 1280,
+      "height" : 720
+    },
+    "layoutPositioning" : "relative",
+    "items" : [ {
+      "id" : "model00000177f1294f99_00000000",
+      "type" : "container",
+      "title" : {
+        "translationTable" : {
+          "Default" : "Revenue Dashboard"
+        }
+      },
+      "templateName" : "Template12",
+      "items" : [ {
+        "id" : "model00000177f1294f9a_00000000",
+        "css" : "templateBox aspectRatio_default",
+        "type" : "genericPage",
+        "layoutPositioning" : "relative",
+        "items" : [ {
+          "id" : "model00000177f1294f9a_00000002",
+          "style" : {
+            "top" : "0%",
+            "left" : "0%",
+            "right" : "66.7%",
+            "bottom" : "75%"
+          },
+          "type" : "templateDropZone",
+          "templateName" : "dz1",
+          "relatedLayouts" : "|model00000177f12fb4af_00000000|"
+        }, {
+          "id" : "model00000177f1294f9b_00000000",
+          "css" : "noBorderLeft",
+          "style" : {
+            "top" : "0%",
+            "left" : "33.3%",
+            "right" : "33.4%",
+            "bottom" : "75%"
+          },
+          "type" : "templateDropZone",
+          "templateName" : "dz3",
+          "relatedLayouts" : "|model00000177f13103ca_00000000|"
+        }, {
+          "id" : "model00000177f1294f9b_00000002",
+          "css" : "noBorderLeft",
+          "style" : {
+            "top" : "0%",
+            "left" : "66.6%",
+            "right" : "0%",
+            "bottom" : "75%"
+          },
+          "type" : "templateDropZone",
+          "templateName" : "dz4",
+          "relatedLayouts" : "|model00000177f1328ce2_00000000|"
+        }, {
+          "id" : "model00000177f1294f9c_00000001",
+          "css" : "noBorderTop",
+          "style" : {
+            "top" : "25%",
+            "left" : "0%",
+            "right" : "33.4%",
+            "bottom" : "0%"
+          },
+          "type" : "templateDropZone",
+          "templateName" : "dz2",
+          "relatedLayouts" : ""
+        }, {
+          "id" : "model00000177f1294f9d_00000000",
+          "css" : "noBorderLeft noBorderTop",
+          "style" : {
+            "top" : "25%",
+            "left" : "66.6%",
+            "right" : "0%",
+            "bottom" : "0%"
+          },
+          "type" : "templateDropZone",
+          "templateName" : "dz5",
+          "relatedLayouts" : "|model00000177f12f296a_00000000|"
+        }, {
+          "id" : "model00000177f12a1f52_00000000",
+          "style" : {
+            "left" : "0.9945750452079566%",
+            "top" : "25.075346594333936%",
+            "height" : "75.12557765722323%",
+            "width" : "66.59981916817361%"
+          },
+          "type" : "widget",
+          "relatedLayouts" : "",
+          "features" : {
+            "SmartAnnotations" : {
+              "selectedAnnotations" : [ ]
+            },
+            "Models_internal" : {
+              "type" : "live",
+              "id" : "model00000177f12a1f52_00000000",
+              "visId" : "com.ibm.vis.rave2bundletiledmap",
+              "titleHtml" : {
+                "translationTable" : {
+                  "Default" : "<div class=\"widgetTitle titleShown\" title=\"Latitude and Longitude coordinates\" aria-labelledby=\"model00000177f12a1f52_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Quantity and  Revenue and Suburb for Latitude and Longitude coordinates</span></p></span></div></div></div></div></div>"
+                }
+              },
+              "titleMode" : "smartTitle",
+              "responsiveTitle" : false,
+              "name" : {
+                "translationTable" : {
+                  "Default" : "Quantity and  Revenue and Suburb for Latitude and Longitude coordinates"
+                }
+              },
+              "data" : {
+                "dataViews" : [ {
+                  "id" : "model00000177f12a1f43_00000000",
+                  "modelRef" : "model00000177f1295fba_00000002",
+                  "dataItems" : [ {
+                    "id" : "id1593010214",
+                    "itemId" : "Australian_Towns_Revenue_csv.Latitude",
+                    "itemLabel" : "Latitude",
+                    "navigationPathId" : null,
+                    "union" : { }
+                  }, {
+                    "id" : "id_329267915",
+                    "itemId" : "Australian_Towns_Revenue_csv.Longitude",
+                    "itemLabel" : "Longitude",
+                    "navigationPathId" : null,
+                    "union" : { }
+                  }, {
+                    "id" : "id1744027999",
+                    "itemId" : "Australian_Towns_Revenue_csv.Suburb",
+                    "itemLabel" : "Suburb",
+                    "union" : { }
+                  }, {
+                    "id" : "id1197680930",
+                    "itemId" : "Australian_Towns_Revenue_csv.Revenue",
+                    "itemLabel" : "Revenue",
+                    "union" : { }
+                  }, {
+                    "id" : "id1747984453",
+                    "itemId" : "Australian_Towns_Revenue_csv.Quantity",
+                    "itemLabel" : "Quantity",
+                    "union" : { }
+                  } ]
+                } ]
+              },
+              "visTypeLocked" : false,
+              "slotmapping" : {
+                "slots" : [ {
+                  "name" : "latlongLocations.latitude",
+                  "dataItems" : [ "id1593010214" ]
+                }, {
+                  "name" : "latlongLocations.longitude",
+                  "dataItems" : [ "id_329267915" ]
+                }, {
+                  "name" : "latlongLocations.caption",
+                  "dataItems" : [ "id1744027999" ]
+                }, {
+                  "name" : "latlongSize",
+                  "dataItems" : [ "id1197680930" ]
+                }, {
+                  "name" : "latlongColor",
+                  "dataItems" : [ "id1747984453" ]
+                } ],
+                "multiMeasureGroups" : { }
+              },
+              "recommenderInfo" : {
+                "rtitle" : "Map visualization showing Latitude and Longitude coordinates.",
+                "description" : "This visualization shows Latitude and Longitude. Latitude and Longitude are locations.",
+                "label" : "Latitude and Longitude coordinates"
+              },
+              "properties" : [ {
+                "id" : "widget.legend.position",
+                "value" : "bottom"
+              }, {
+                "id" : "interactivityState",
+                "value" : {
+                  "svc" : 1,
+                  "sub" : [ {
+                    "i" : 0,
+                    "s" : {
+                      "version" : 1,
+                      "boundingBox" : [ [ 122.17555182482141, -32.768960884274435 ], [ 170.9366481751773, -8.60418328569456 ] ],
+                      "pitch" : 0,
+                      "bearing" : 0
+                    }
+                  } ],
+                  "ltc" : null,
+                  "lts" : null,
+                  "ltid" : "GridLayouter"
+                }
+              }, {
+                "id" : "contColorPalette_data.latlong",
+                "value" : "colorPalette6"
+              }, {
+                "id" : "contrast.label.color",
+                "value" : false
+              } ],
+              "borderColor" : "color5",
+              "savedPrompts" : null
+            }
+          }
+        }, {
+          "id" : "model00000177f12f296a_00000000",
+          "style" : {
+            "left" : "66.57203690560681%",
+            "top" : "24.87376381910816%",
+            "height" : "75.12623618089185%",
+            "width" : "33.40021291696239%"
+          },
+          "type" : "widget",
+          "relatedLayouts" : "model00000177f1294f9d_00000000",
+          "features" : {
+            "SmartAnnotations" : {
+              "selectedAnnotations" : [ ]
+            },
+            "Models_internal" : {
+              "type" : "live",
+              "id" : "model00000177f12f296a_00000000",
+              "visId" : "JQGrid",
+              "titleHtml" : {
+                "translationTable" : {
+                  "Default" : "<div class=\"widgetTitle titleShown\" title=\"State regions\" aria-labelledby=\"model00000177f12f296a_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>State</span></p></span></div></div></div></div></div>"
+                }
+              },
+              "titleMode" : "smartTitle",
+              "responsiveTitle" : false,
+              "name" : {
+                "translationTable" : {
+                  "Default" : "State"
+                }
+              },
+              "data" : {
+                "dataViews" : [ {
+                  "id" : "model00000177f12f680a_00000000",
+                  "modelRef" : "model00000177f1295fba_00000002",
+                  "dataItems" : [ {
+                    "id" : "id1743073320",
+                    "itemId" : "Australian_Towns_Revenue_csv.State_",
+                    "itemLabel" : "State",
+                    "navigationPathId" : null,
+                    "union" : { }
+                  } ]
+                } ]
+              },
+              "visTypeLocked" : true,
+              "slotmapping" : {
+                "slots" : [ {
+                  "name" : "grid_cols",
+                  "dataItems" : [ "id1743073320" ]
+                } ],
+                "multiMeasureGroups" : { }
+              },
+              "recommenderInfo" : {
+                "rtitle" : "Map visualization showing State regions.",
+                "description" : "This visualization shows State. State is a location.",
+                "label" : "State regions"
+              },
+              "properties" : [ {
+                "id" : "contrast.label.color",
+                "value" : false
+              } ],
+              "savedPrompts" : null
+            }
+          }
+        }, {
+          "id" : "model00000177f12fb4af_00000000",
+          "style" : {
+            "left" : "0%",
+            "top" : "0%",
+            "height" : "25.00006308654717%",
+            "width" : "33.30042583392476%"
+          },
+          "type" : "widget",
+          "relatedLayouts" : "model00000177f1294f9a_00000002",
+          "features" : {
+            "Models_internal" : {
+              "type" : "live",
+              "id" : "model00000177f12fb4af_00000000",
+              "visId" : "summary",
+              "titleHtml" : {
+                "translationTable" : {
+                  "Default" : "<div class=\"widgetTitle titleShown\" title=\"Revenue\" aria-labelledby=\"model00000177f12fb4af_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Revenue</span></p></span></div></div></div></div></div>"
+                }
+              },
+              "titleMode" : "smartTitle",
+              "responsiveTitle" : false,
+              "name" : {
+                "translationTable" : {
+                  "Default" : "Revenue"
+                }
+              },
+              "data" : {
+                "dataViews" : [ {
+                  "id" : "model00000177f12fb4a6_00000000",
+                  "modelRef" : "model00000177f1295fba_00000002",
+                  "dataItems" : [ {
+                    "id" : "id1197680930",
+                    "itemId" : "Australian_Towns_Revenue_csv.Revenue",
+                    "itemLabel" : "Revenue",
+                    "navigationPathId" : null,
+                    "format" : {
+                      "formatSpec" : {
+                        "type" : "currency",
+                        "timezone" : "Australia/Sydney",
+                        "locale" : "en-us",
+                        "decimalFormatLength" : "short",
+                        "useGrouping" : true
+                      }
+                    },
+                    "union" : { }
+                  } ]
+                } ]
+              },
+              "visTypeLocked" : false,
+              "slotmapping" : {
+                "slots" : [ {
+                  "name" : "actual",
+                  "dataItems" : [ "id1197680930" ]
+                } ],
+                "multiMeasureGroups" : { }
+              },
+              "recommenderInfo" : {
+                "rtitle" : "Singleton visualization showing Revenue.",
+                "description" : "This visualization shows Revenue. Revenue is a measure. Revenue has all positive values. Revenue has a high variance of values.",
+                "label" : "Revenue"
+              },
+              "properties" : [ {
+                "id" : "elementColor",
+                "value" : "color10"
+              }, {
+                "id" : "contrast.label.color",
+                "value" : false
+              } ],
+              "savedPrompts" : null
+            }
+          }
+        }, {
+          "id" : "model00000177f13103ca_00000000",
+          "style" : {
+            "left" : "33.286018452803404%",
+            "top" : "0%",
+            "height" : "25.00006308654717%",
+            "width" : "33.30156139105749%"
+          },
+          "type" : "widget",
+          "relatedLayouts" : "model00000177f1294f9b_00000000",
+          "features" : {
+            "Models_internal" : {
+              "type" : "live",
+              "id" : "model00000177f13103ca_00000000",
+              "visId" : "summary",
+              "titleHtml" : {
+                "translationTable" : {
+                  "Default" : "<div class=\"widgetTitle titleShown\" title=\"Quantity\" aria-labelledby=\"model00000177f13103ca_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Quantity</span></p></span></div></div></div></div></div>"
+                }
+              },
+              "titleMode" : "smartTitle",
+              "responsiveTitle" : false,
+              "name" : {
+                "translationTable" : {
+                  "Default" : "Quantity"
+                }
+              },
+              "data" : {
+                "dataViews" : [ {
+                  "id" : "model00000177f13103ba_00000000",
+                  "modelRef" : "model00000177f1295fba_00000002",
+                  "dataItems" : [ {
+                    "id" : "id1747984453",
+                    "itemId" : "Australian_Towns_Revenue_csv.Quantity",
+                    "itemLabel" : "Quantity",
+                    "navigationPathId" : null,
+                    "format" : {
+                      "formatSpec" : {
+                        "type" : "number",
+                        "timezone" : "Australia/Sydney",
+                        "locale" : "en-us",
+                        "decimalFormatLength" : "short",
+                        "useGrouping" : true
+                      }
+                    },
+                    "union" : { }
+                  } ]
+                } ]
+              },
+              "visTypeLocked" : false,
+              "slotmapping" : {
+                "slots" : [ {
+                  "name" : "actual",
+                  "dataItems" : [ "id1747984453" ]
+                } ],
+                "multiMeasureGroups" : { }
+              },
+              "recommenderInfo" : {
+                "rtitle" : "Singleton visualization showing Quantity.",
+                "description" : "This visualization shows Quantity. Quantity is a measure. Quantity has all positive values. Quantity has a high variance of values.",
+                "label" : "Quantity"
+              },
+              "properties" : [ {
+                "id" : "elementColor",
+                "value" : "color6"
+              }, {
+                "id" : "contrast.label.color",
+                "value" : false
+              } ],
+              "borderColor" : "transparent",
+              "savedPrompts" : null
+            }
+          }
+        }, {
+          "id" : "model00000177f1328ce2_00000000",
+          "style" : {
+            "left" : "66.59981916817361%",
+            "top" : "0%",
+            "height" : "24.99995981514969%",
+            "width" : "33.4001808318264%"
+          },
+          "type" : "widget",
+          "relatedLayouts" : "model00000177f1294f9b_00000002",
+          "properties" : {
+            "value.graphic.fillColor" : "color8",
+            "value.graphic.borderColor" : "transparent",
+            "value.graphic.content" : "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"  class=\"staticContent\" height=\"100%\" width=\"100%\" preserveAspectRatio=\"none\"  viewBox=\"0 0 32 32\"><g xmlns=\"http://www.w3.org/2000/svg\" vector-effect=\"non-scaling-stroke\"><path d=\"M15.8 5.6A2.65 2.65 0 0 0 18.4 3a2.6 2.6 0 0 0-5.2 0 2.65 2.65 0 0 0 2.6 2.6zM13.1 6.2a3.33 3.33 0 0 0-3.3 3.3v7.9a1.1 1.1 0 1 0 2.2 0v-7.2h.5V30a1.5 1.5 0 1 0 3 0V18.5h.5V30a1.5 1.5 0 1 0 3 0V10.2h.5v7.2a1.1 1.1 0 1 0 2.2 0V9.6a3.35 3.35 0 0 0-3.3-3.4z\" vector-effect=\"non-scaling-stroke\"/></g></svg>"
+          },
+          "features" : {
+            "Models_internal" : {
+              "type" : "live",
+              "id" : "model00000177f1328ce2_00000000",
+              "visId" : "summary",
+              "titleHtml" : {
+                "translationTable" : {
+                  "Default" : "<div class=\"widgetTitle titleShown\" title=\"Population\" aria-labelledby=\"model00000177f1328ce2_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea hidden\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Population</span></p></span></div></div></div></div></div>"
+                }
+              },
+              "titleMode" : "smartTitle",
+              "responsiveTitle" : false,
+              "name" : {
+                "translationTable" : {
+                  "Default" : "Population"
+                }
+              },
+              "data" : {
+                "dataViews" : [ {
+                  "id" : "model00000177f1328cd5_00000000",
+                  "modelRef" : "model00000177f1295fba_00000002",
+                  "dataItems" : [ {
+                    "id" : "id690661511",
+                    "itemId" : "Australian_Towns_Revenue_csv.Population",
+                    "itemLabel" : "Population",
+                    "navigationPathId" : null,
+                    "union" : { }
+                  } ]
+                } ]
+              },
+              "visTypeLocked" : false,
+              "slotmapping" : {
+                "slots" : [ {
+                  "name" : "actual",
+                  "dataItems" : [ "id690661511" ]
+                } ],
+                "multiMeasureGroups" : { }
+              },
+              "recommenderInfo" : {
+                "rtitle" : "Singleton visualization showing Population.",
+                "description" : "This visualization shows Population. Population is a measure. Population has all positive values. Population has a high variance of values.",
+                "label" : "Population"
+              },
+              "properties" : [ {
+                "id" : "contrast.label.color",
+                "value" : false
+              } ],
+              "savedPrompts" : null
+            }
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "features" : {
+    "DataSources" : [ {
+      "id" : "model00000177f1295fba_00000002",
+      "assetId" : "iE63C7D9C286341DFA2CD3883D135A23E",
+      "type" : "module",
+      "name" : "Australian Towns Data Module",
+      "shaping" : {
+        "references" : { },
+        "embeddedModuleUpToDate" : true
+      }
+    } ],
+    "MetadataLoader" : {
+      "metadataSubsetIds" : {
+        "model00000177f1295fba_00000002" : [ "Australian_Towns_Revenue_csv.State_", "Australian_Towns_Revenue_csv.Latitude", "Australian_Towns_Revenue_csv.Longitude", "Australian_Towns_Revenue_csv.Suburb", "Australian_Towns_Revenue_csv.Revenue", "Australian_Towns_Revenue_csv.Quantity", "Australian_Towns_Revenue_csv.Population" ]
+      }
+    },
+    "ContentStoreReferences" : [ {
+      "objects" : [ {
+        "searchPath" : "/content/folder[@name='Training']/folder[@name='Packages']/module[@name='Australian Towns Data Module']",
+        "_meta" : {
+          "links" : {
+            "path" : {
+              "mimeType" : "application/vnd.ibm.bi.module+json",
+              "url" : "/bi/v1/path?path=.public_folders%2FTraining%2FPackages%2FAustralian%2BTowns%2BData%2BModule"
+            },
+            "smarts_modules" : {
+              "mimeType" : "application/json",
+              "url" : "/bi/v1/objects/iE63C7D9C286341DFA2CD3883D135A23E/smarts_modules"
+            },
+            "self" : {
+              "mimeType" : "application/vnd.ibm.bi.module+json",
+              "url" : "/bi/v1/objects/iE63C7D9C286341DFA2CD3883D135A23E"
+            }
+          }
+        },
+        "id" : "iE63C7D9C286341DFA2CD3883D135A23E",
+        "ancestors" : [ {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.content+json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C/items"
+              }
+            }
+          },
+          "id" : "iA1C0304B762F4BA784381FBFB76F442C",
+          "type" : "content",
+          "defaultName" : "Team Content"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05/items"
+              }
+            }
+          },
+          "id" : "i464C536F5926463BB72F8E901F0A0F05",
+          "type" : "folder",
+          "defaultName" : "Training"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/i8C370CD63457433FBDF479B09E78C47D"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/i8C370CD63457433FBDF479B09E78C47D/items"
+              }
+            }
+          },
+          "id" : "i8C370CD63457433FBDF479B09E78C47D",
+          "type" : "folder",
+          "defaultName" : "Packages"
+        } ],
+        "type" : "module",
+        "defaultName" : "Australian Towns Data Module"
+      } ],
+      "name" : {
+        "en-us" : "iE63C7D9C286341DFA2CD3883D135A23E"
+      }
+    }, {
+      "objects" : [ {
+        "searchPath" : "/content/folder[@name='Training']/folder[@name='Analytics Explorer Training Solutions']/report[@name='Dashboard- Analytics Map (Drill Through Target Report)']",
+        "_meta" : {
+          "links" : {
+            "path" : {
+              "mimeType" : "application/vnd.ibm.bi.report+json",
+              "url" : "/bi/v1/path?path=.public_folders%2FTraining%2FAnalytics%2BExplorer%2BTraining%2BSolutions%2FDashboard-%2BAnalytics%2BMap%2B%2528Drill%2BThrough%2BTarget%2BReport%2529"
+            },
+            "versions" : {
+              "mimeType" : "application/json",
+              "url" : "/bi/v1/objects/i1ED69D8867DC419394AA1306C737247D/versions"
+            },
+            "self" : {
+              "mimeType" : "application/vnd.ibm.bi.report+json",
+              "url" : "/bi/v1/objects/i1ED69D8867DC419394AA1306C737247D"
+            },
+            "histories" : {
+              "mimeType" : "application/json",
+              "url" : "/bi/v1/objects/i1ED69D8867DC419394AA1306C737247D/histories"
+            }
+          }
+        },
+        "id" : "i1ED69D8867DC419394AA1306C737247D",
+        "ancestors" : [ {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.content+json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C/items"
+              }
+            }
+          },
+          "id" : "iA1C0304B762F4BA784381FBFB76F442C",
+          "type" : "content",
+          "defaultName" : "Team Content"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05/items"
+              }
+            }
+          },
+          "id" : "i464C536F5926463BB72F8E901F0A0F05",
+          "type" : "folder",
+          "defaultName" : "Training"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/iA5D8FCA336EB44B6AE8EAF4DB61DDB3D"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/iA5D8FCA336EB44B6AE8EAF4DB61DDB3D/items"
+              }
+            }
+          },
+          "id" : "iA5D8FCA336EB44B6AE8EAF4DB61DDB3D",
+          "type" : "folder",
+          "defaultName" : "Analytics Explorer Training Solutions"
+        } ],
+        "type" : "report",
+        "defaultName" : "Dashboard- Analytics Map (Drill Through Target Report)"
+      } ],
+      "name" : {
+        "en-us" : "i1ED69D8867DC419394AA1306C737247D"
+      }
+    } ],
+    "LocalDataStore" : {
+      "autogenerateOnSave" : false,
+      "dataStoreDefinitions" : [ ],
+      "cacheTableRowLimit" : 300000,
+      "cacheTableOverallSizeLimit" : 100000000,
+      "tableInstanceCounter" : 1
+    },
+    "LayoutSets" : {
+      "layoutSetList" : [ ],
+      "activeLayoutSets" : { }
+    },
+    "Bookmarks" : {
+      "bookmarkList" : [ ],
+      "activeBookmarks" : { }
+    }
+  }
+}

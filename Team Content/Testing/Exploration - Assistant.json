@@ -1,0 +1,243 @@
+{
+  "name" : "Exploration - Assistant",
+  "version" : 3600,
+  "eventGroups" : [ {
+    "id" : "model00000177f5d0ac79_00000000:1",
+    "widgetIds" : [ "model00000177f5d0b7fb_00000000" ]
+  } ],
+  "properties" : {
+    "customColors" : {
+      "colors" : [ ]
+    },
+    "defaultLocale" : "Default",
+    "fredIsRed" : true,
+    "responsiveLayoutPaddings" : {
+      "horizontal" : 0,
+      "vertical" : 0
+    },
+    "responsiveLayoutMargins" : {
+      "vertical" : 0,
+      "horizontal" : 0
+    },
+    "showFooter" : false
+  },
+  "drillThrough" : [ ],
+  "fredIsRed" : {
+    "id" : "model00000177f5cba586_00000000",
+    "colorMap" : {
+      "Camping Equipment" : {
+        "v" : 0,
+        "s" : 1
+      },
+      "Golf Equipment" : {
+        "v" : 1,
+        "s" : 1
+      },
+      "Outdoor Protection" : {
+        "v" : 2,
+        "s" : 1
+      },
+      "Personal Accessories" : {
+        "v" : 3,
+        "s" : 1
+      }
+    },
+    "saveId" : 3
+  },
+  "pageContext" : [ ],
+  "dataSources" : {
+    "version" : "1.0",
+    "sources" : [ {
+      "id" : "model00000177f5cba686_00000002",
+      "assetId" : "i0F860C145A9D47CA847302EB21A2BAAC",
+      "type" : "module",
+      "name" : "Great Outdoors Data Module",
+      "shaping" : {
+        "references" : { },
+        "embeddedModuleUpToDate" : false
+      }
+    } ]
+  },
+  "layout" : {
+    "id" : "model00000177f5cba58c_00000000",
+    "type" : "exploreContainer",
+    "items" : [ {
+      "id" : "model00000177f5d0ac79_00000000",
+      "type" : "exploreCard",
+      "isHidden" : false,
+      "isFavourite" : false,
+      "items" : [ {
+        "id" : "model00000177f5d0b7fb_00000000",
+        "type" : "widget",
+        "features" : {
+          "VisKeyDrivers" : {
+            "possibleKeyDrivers" : { }
+          },
+          "SmartAnnotations" : {
+            "selectedAnnotations" : [ "AVERAGE", "MEANINGFUL_DIFFERENCES" ]
+          },
+          "Models_internal" : {
+            "type" : "live",
+            "id" : "model00000177f5d0b7fb_00000000",
+            "visId" : "com.ibm.vis.rave2bundletiledmap",
+            "titleHtml" : {
+              "translationTable" : {
+                "Default" : "<div class=\"widgetTitle titleShown\" title=\"Revenue for Province Or State regions\" aria-labelledby=\"model00000177f5d0b7fb_00000000Title\" appcues-data-id=\"widgetTitle\"><div class=\"textArea\"><div class=\"summernote\" style=\"display: none;\"></div><div class=\"note-editor\"><div class=\"note-dropzone\">  <div class=\"note-dropzone-message\"></div></div><div class=\"note-editing-area\"><div class=\"note-handle\"><div class=\"note-control-selection\"><div class=\"note-control-selection-bg\"></div><div class=\"note-control-holder note-control-nw\"></div><div class=\"note-control-holder note-control-ne\"></div><div class=\"note-control-holder note-control-sw\"></div><div class=\"note-control-sizing note-control-se\"></div><div class=\"note-control-selection-info\"></div></div></div><div class=\"note-editable\" contenteditable=\"false\"><span class=\"textFitted responsiveColor responsiveFontSize responsiveFontFamily\"><p><span>Revenue for Province Or State regions</span></p></span></div></div></div></div></div>"
+              }
+            },
+            "titleMode" : "smartTitle",
+            "responsiveTitle" : false,
+            "name" : {
+              "translationTable" : {
+                "Default" : "Revenue for Province Or State regions"
+              }
+            },
+            "data" : {
+              "dataViews" : [ {
+                "id" : "model00000177f5cfb67a_00000000",
+                "dataItems" : [ {
+                  "id" : "id1150243297",
+                  "itemId" : "SampleFile_GOSales_xls.Province_or_State",
+                  "itemLabel" : "Province or State",
+                  "union" : { }
+                }, {
+                  "id" : "id_1968235783",
+                  "itemId" : "SampleFile_GOSales_xls.Revenue",
+                  "itemLabel" : "Revenue",
+                  "union" : { }
+                } ],
+                "modelRef" : "model00000177f5cba686_00000002"
+              } ]
+            },
+            "visTypeLocked" : false,
+            "slotmapping" : {
+              "slots" : [ {
+                "name" : "locations",
+                "dataItems" : [ "id1150243297" ]
+              }, {
+                "name" : "locationColor",
+                "dataItems" : [ "id_1968235783" ]
+              } ],
+              "multiMeasureGroups" : { }
+            },
+            "thumbnailId" : null,
+            "recommenderInfo" : {
+              "rtitle" : "Map visualization showing Revenue for Province Or State regions.",
+              "description" : "This visualization shows Revenue and Province Or State. Revenue is a measure. Province Or State is a location. Revenue has all positive values. Revenue has a high variance of values.",
+              "label" : "Revenue for Province Or State regions"
+            },
+            "properties" : [ {
+              "id" : "contrast.label.color",
+              "value" : false
+            } ]
+          }
+        }
+      } ]
+    } ]
+  },
+  "features" : {
+    "DataSources" : [ {
+      "id" : "model00000177f5cba686_00000002",
+      "assetId" : "i0F860C145A9D47CA847302EB21A2BAAC",
+      "type" : "module",
+      "name" : "Great Outdoors Data Module",
+      "shaping" : {
+        "references" : { },
+        "embeddedModuleUpToDate" : false
+      }
+    } ],
+    "LayoutSets" : {
+      "layoutSetList" : [ ],
+      "activeLayoutSets" : { }
+    },
+    "Bookmarks" : {
+      "bookmarkList" : [ ],
+      "activeBookmarks" : { }
+    },
+    "MetadataLoader" : {
+      "metadataSubsetIds" : {
+        "model00000177f5cba686_00000002" : [ "SampleFile_GOSales_xls.Province_or_State", "SampleFile_GOSales_xls.Revenue" ]
+      }
+    },
+    "ContentStoreReferences" : [ {
+      "objects" : [ {
+        "searchPath" : "/content/folder[@name='Training']/folder[@name='Packages']/module[@name='Great Outdoors Data Module']",
+        "_meta" : {
+          "links" : {
+            "path" : {
+              "mimeType" : "application/vnd.ibm.bi.module+json",
+              "url" : "/bi/v1/path?path=.public_folders%2FTraining%2FPackages%2FGreat%2BOutdoors%2BData%2BModule"
+            },
+            "smarts_modules" : {
+              "mimeType" : "application/json",
+              "url" : "/bi/v1/objects/i0F860C145A9D47CA847302EB21A2BAAC/smarts_modules"
+            },
+            "self" : {
+              "mimeType" : "application/vnd.ibm.bi.module+json",
+              "url" : "/bi/v1/objects/i0F860C145A9D47CA847302EB21A2BAAC"
+            }
+          }
+        },
+        "id" : "i0F860C145A9D47CA847302EB21A2BAAC",
+        "ancestors" : [ {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.content+json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/iA1C0304B762F4BA784381FBFB76F442C/items"
+              }
+            }
+          },
+          "id" : "iA1C0304B762F4BA784381FBFB76F442C",
+          "type" : "content",
+          "defaultName" : "Team Content"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/i464C536F5926463BB72F8E901F0A0F05/items"
+              }
+            }
+          },
+          "id" : "i464C536F5926463BB72F8E901F0A0F05",
+          "type" : "folder",
+          "defaultName" : "Training"
+        }, {
+          "_meta" : {
+            "links" : {
+              "self" : {
+                "mimeType" : "application/vnd.ibm.bi.folder+json",
+                "url" : "/bi/v1/objects/i8C370CD63457433FBDF479B09E78C47D"
+              },
+              "items" : {
+                "mimeType" : "application/json",
+                "url" : "/bi/v1/objects/i8C370CD63457433FBDF479B09E78C47D/items"
+              }
+            }
+          },
+          "id" : "i8C370CD63457433FBDF479B09E78C47D",
+          "type" : "folder",
+          "defaultName" : "Packages"
+        } ],
+        "type" : "module",
+        "defaultName" : "Great Outdoors Data Module"
+      } ],
+      "name" : {
+        "en-us" : "i0F860C145A9D47CA847302EB21A2BAAC"
+      }
+    } ],
+    "LocalDataStore" : {
+      "autogenerateOnSave" : false,
+      "dataStoreDefinitions" : [ ]
+    }
+  }
+}
