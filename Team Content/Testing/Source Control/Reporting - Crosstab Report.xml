@@ -1,12 +1,24 @@
 <report xmlns="http://developer.cognos.com/schemas/report/17.6/" expressionLocale="en" useStyleVersion="11.4">
+      
+  
   <!--RSU-SPC-0093 The report specification was upgraded from "http://developer.cognos.com/schemas/report/16.0/" to "http://developer.cognos.com/schemas/report/17.6/" at 2026-7-9. 16:17:9-->
+      
+  
   <!--RSU-SPC-0093 The report specification was upgraded from "http://developer.cognos.com/schemas/report/15.4/" to "http://developer.cognos.com/schemas/report/16.0/" at 2021-10-11. 19:17:22-->
+      
+  
   <!--RSU-SPC-0093 The report specification was upgraded from "http://developer.cognos.com/schemas/report/15.0/" to "http://developer.cognos.com/schemas/report/15.4/" at 2020-5-26. 16:59:17-->
+      
+  
   <!--RSU-SPC-0093 The report specification was upgraded from "http://developer.cognos.com/schemas/report/14.2/" to "http://developer.cognos.com/schemas/report/15.0/" at 2019-2-28. 14:38:54-->
-  	
+      	
 	
+  
+  
   <drillBehavior/>
-  	
+      	
+  
+  
   <layouts>
     <layout>
       <reportPages>
@@ -106,7 +118,7 @@
                           <defaultStyles>
                             <defaultStyle refStyle="ml"/>
                           </defaultStyles>
-                          <CSS value="background-color:#0F62FE"/>
+                          <CSS value="background-color:green"/>
                         </style>
                         <contents>
                           <textItem>
@@ -177,6 +189,8 @@
       </reportPages>
     </layout>
   </layouts>
+      
+  
   
   <XMLAttributes>
     <XMLAttribute name="RS_CreateExtendedDataItems" output="no" value="true"/>
@@ -184,7 +198,11 @@
     <XMLAttribute name="decimalSeparator" output="no" value="."/>
     <XMLAttribute name="RS_modelModificationTime" output="no" value="2025-08-21T03:11:37.137Z"/>
   </XMLAttributes>
+      
+  
   <modelPath>/content/folder[@name='Training']/folder[@name='Packages']/package[@name='Great Outdoors Sales (cube)']/model[@name='2025-08-21T03:11:37.091Z']</modelPath>
+      
+  
   <queries>
     <query name="Query1">
       <source>
@@ -262,5 +280,9 @@
       </selection>
     </query>
   </queries>
+      
+  
   <reportName>Reporting - Crosstab Report</reportName>
+    
+
 </report>
