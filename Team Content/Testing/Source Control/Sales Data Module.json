@@ -1,0 +1,909 @@
+{
+  "container" : "C",
+  "identifier" : "C_Sales_Data_Module",
+  "propertyOverride" : [ "property._MUI_diagramZoomAndPan", "refActiveParameterValueSet", "identifier", "label" ],
+  "refActiveParameterValueSet" : "_default",
+  "expressionLocale" : "en-us",
+  "drillGroup" : [ {
+    "identifier" : "Product_Line_Country",
+    "propertyOverride" : [ "NEW" ],
+    "segment" : [ {
+      "identifier" : "Product_Line",
+      "ref" : "Product.Product_Line",
+      "label" : "Product Line"
+    }, {
+      "identifier" : "COUNTRY",
+      "ref" : "Location.COUNTRY",
+      "label" : "Country"
+    } ],
+    "label" : "Product Line - Country"
+  } ],
+  "label" : "Sales Data Module",
+  "version" : "24.0",
+  "useSpec" : [ {
+    "identifier" : "M1",
+    "searchPath" : "CAMID(\"BASIC:70\")/folder[@name='My Folders']/uploadedFile[@name='Data Module Sales - Product Key.xlsx']",
+    "dataCacheExpiry" : "0",
+    "type" : "file",
+    "storeID" : "iB1F9BEBA334E443FB23196ED20E867F9",
+    "ancestors" : [ {
+      "storeID" : ".my_folders",
+      "defaultName" : "My Folders"
+    } ]
+  }, {
+    "identifier" : "M2",
+    "searchPath" : "/content/folder[@name='Calendars']/folder[@name='Fiscal calendars']/module[@name='07. July 1']",
+    "type" : "module",
+    "storeID" : "i7B0D1D8A868C4E4DB8E1568BEB309FE2",
+    "ancestors" : [ {
+      "storeID" : ".public_folders",
+      "defaultName" : "Team Content"
+    }, {
+      "storeID" : "iDB95DB7CEB304D2DA8123098EAF7877A",
+      "defaultName" : "Calendars"
+    }, {
+      "storeID" : "i8E5F9C2AB4B84113A4AAFA7A94683872",
+      "defaultName" : "Fiscal calendars"
+    } ]
+  } ],
+  "parameterValueSet" : [ {
+    "identifier" : "_default",
+    "propertyOverride" : [ "NEW" ]
+  } ],
+  "dataRetrievalMode" : "liveConnection",
+  "querySubject" : [ {
+    "identifier" : "Date_",
+    "ref" : [ "M1.Date_" ],
+    "item" : [ {
+      "queryItem" : {
+        "identifier" : "_row_id",
+        "expression" : "_row_id",
+        "hidden" : true,
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "count",
+        "description" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "comment" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "label" : "Row Id"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "date_key",
+        "expression" : "date_key",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Date Key"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Day_",
+        "propertyOverride" : [ "property._MUI_propertySetByUser_splitDefinitionQuerySubject" ],
+        "expression" : "Day_",
+        "nullable" : false,
+        "datatype" : "DATE",
+        "splitDefinition" : [ {
+          "folderLabel" : "FiscalCalendar",
+          "ref" : "Page1_1",
+          "instanceType" : "reference"
+        } ],
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "property" : [ {
+          "name" : "_MUI_propertySetByUser_splitDefinitionQuerySubject",
+          "value" : "true"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Day",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cDate",
+          "class" : "cTime"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Month_",
+        "expression" : "Month_",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Month",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cMonth",
+          "class" : "cTime"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Quarter",
+        "expression" : "Quarter",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Quarter",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cQuarter",
+          "class" : "cTime"
+        } ]
+      }
+    } ],
+    "selectListControl" : "allQueryItems",
+    "propertyOverride" : [ "property._MUI_diagramNodePosition", "property._MUI_propertySetByUser_selectListControl", "selectListControl" ],
+    "classifier" : "querySubject",
+    "property" : [ {
+      "name" : "_MUI_diagramNodePosition",
+      "value" : "{\"x\":902.6542974365658,\"y\":94.12915849058669}"
+    }, {
+      "name" : "_MUI_propertySetByUser_selectListControl",
+      "value" : "true"
+    } ],
+    "label" : "Date"
+  }, {
+    "identifier" : "Product",
+    "ref" : [ "M1.Product" ],
+    "item" : [ {
+      "queryItem" : {
+        "identifier" : "Product_Code_Name",
+        "propertyOverride" : [ "NEW" ],
+        "expression" : "cast( product_code, varchar(4)) + '-' + PRODUCT_NAME",
+        "nullable" : false,
+        "datatype" : "VARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "minimum",
+        "property" : [ {
+          "name" : "_MUI_expr",
+          "value" : "{\"func\":\"customCalculation\",\"version\":\"6.0\"}"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Code – Name"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "_row_id",
+        "expression" : "_row_id",
+        "hidden" : true,
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "count",
+        "description" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "comment" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "label" : "Row Id"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "product_code",
+        "expression" : "product_code",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Code"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "PRODUCT_NAME",
+        "expression" : "PRODUCT_NAME",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Name"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "INTRODUCTION_DATE",
+        "expression" : "INTRODUCTION_DATE",
+        "nullable" : false,
+        "datatype" : "TIME",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Introduction Date"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "PRODUCTION_COST",
+        "expression" : "PRODUCTION_COST",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "usage" : "fact",
+        "regularAggregate" : "total",
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Production Cost"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "MARGIN",
+        "expression" : "MARGIN",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "usage" : "fact",
+        "regularAggregate" : "average",
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Margin"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "DESCRIPTION",
+        "expression" : "DESCRIPTION",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Description"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Product_Type",
+        "expression" : "Product_Type",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Type"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Product_Line",
+        "expression" : "Product_Line",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Line"
+      }
+    } ],
+    "selectListControl" : "allQueryItems",
+    "propertyOverride" : [ "property._MUI_diagramNodePosition", "property._MUI_propertySetByUser_selectListControl", "selectListControl" ],
+    "classifier" : "querySubject",
+    "property" : [ {
+      "name" : "_MUI_diagramNodePosition",
+      "value" : "{\"x\":268.8206992522674,\"y\":342.22474289088495}"
+    }, {
+      "name" : "_MUI_propertySetByUser_selectListControl",
+      "value" : "true"
+    } ],
+    "label" : "Product"
+  }, {
+    "filter" : [ {
+      "identifier" : "Location_COUNTRY",
+      "expression" : "NOT( (Location.COUNTRY IN ('Austria') AND Location.COUNTRY IS NOT NULL) )",
+      "propertyOverride" : [ "NEW" ],
+      "property" : [ {
+        "name" : "_MUI_FilterSpec",
+        "value" : "{\"fromValue\":null,\"toValue\":null,\"attributeUniqueNames\":[{\"id\":\"Location.COUNTRY\",\"type\":\"QueryItem\"}],\"condition\":null,\"rangeSubtype\":null,\"invert\":true,\"selectedValues\":[\"Austria\"],\"dataType\":\"string\",\"excludedValues\":[],\"filterType\":null}"
+      } ],
+      "label" : "Country"
+    } ],
+    "identifier" : "Location",
+    "ref" : [ "M1.Location" ],
+    "item" : [ {
+      "queryItem" : {
+        "identifier" : "_row_id",
+        "expression" : "_row_id",
+        "hidden" : true,
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "count",
+        "description" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "comment" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "label" : "Row Id"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "salesstaff_key",
+        "expression" : "salesstaff_key",
+        "nullable" : true,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Salesstaff Key"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "FULL_NAME",
+        "propertyOverride" : [ "property._MUI_split" ],
+        "expression" : "FULL_NAME",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "property" : [ {
+          "name" : "_MUI_split",
+          "value" : "{\"isLeadingSelected\":false,\"columnsData\":[{\"useNullString\":false,\"columnId\":\"First Name\",\"nullString\":\"\",\"precision\":38,\"name\":\"First Name\",\"scroll\":false,\"checked\":true,\"scale\":19,\"pencilClass\":\"pencil\",\"type\":\"string\",\"editing\":false},{\"useNullString\":false,\"columnId\":\"Surname\",\"nullString\":\"\",\"precision\":38,\"name\":\"Surname\",\"scroll\":false,\"checked\":true,\"scale\":19,\"pencilClass\":\"pencil editing\",\"type\":\"string\",\"editing\":true},{\"useNullString\":false,\"nullString\":\"\",\"precision\":38,\"name\":\"Full Name_3\",\"scroll\":true,\"checked\":false,\"scale\":19,\"pencilClass\":\"pencil\",\"type\":\"string\",\"editing\":false}],\"isTrailingSelected\":false,\"templateData\":\"Denis Pag\\u00e9\",\"newColumnsIds\":[{\"id\":\"Surname\",\"type\":\"QueryItem\"},{\"id\":\"First_Name\",\"type\":\"QueryItem\"}],\"separatorValue\":\" \"}"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Full Name"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "First_Name",
+        "propertyOverride" : [ "NEW" ],
+        "expression" : "nullif(if (position(' ',FULL_NAME+' ')>0) then (substring(FULL_NAME+' ',1,position(' ',FULL_NAME+' ')-1)) else (FULL_NAME+' '),'')",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(24)",
+        "usage" : "attribute",
+        "regularAggregate" : "minimum",
+        "property" : [ {
+          "name" : "_MUI_expr",
+          "value" : "{\"func\":\"customCalculation\",\"version\":\"6.0\"}"
+        }, {
+          "name" : "_MUI_splitOrigin",
+          "value" : "{\"originalColumnIdentifier\":{\"id\":\"FULL_NAME\",\"type\":\"QueryItem\"}}"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "First Name"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Surname",
+        "propertyOverride" : [ "NEW" ],
+        "expression" : "nullif(if (position(' ',substring(FULL_NAME+' ',position(' ',FULL_NAME+' ')+1))>0) then (substring(substring(FULL_NAME+' ',position(' ',FULL_NAME+' ')+1),1,position(' ',substring(FULL_NAME+' ',position(' ',FULL_NAME+' ')+1))-1)) else (substring(FULL_NAME+' ',position(' ',FULL_NAME+' ')+1)),'')",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(24)",
+        "usage" : "attribute",
+        "regularAggregate" : "minimum",
+        "property" : [ {
+          "name" : "_MUI_expr",
+          "value" : "{\"func\":\"customCalculation\",\"version\":\"6.0\"}"
+        }, {
+          "name" : "_MUI_splitOrigin",
+          "value" : "{\"originalColumnIdentifier\":{\"id\":\"FULL_NAME\",\"type\":\"QueryItem\"}}"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Surname"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "POSITION_",
+        "expression" : "POSITION_",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Position"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "WORK_PHONE",
+        "expression" : "WORK_PHONE",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Work Phone"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "EXTENSION",
+        "expression" : "EXTENSION",
+        "nullable" : true,
+        "datatype" : "BIGINT",
+        "usage" : "fact",
+        "regularAggregate" : "total",
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Extension"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "FAX",
+        "expression" : "FAX",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Fax"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "EMAIL",
+        "expression" : "EMAIL",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Email"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "DATE_HIRED",
+        "expression" : "DATE_HIRED",
+        "nullable" : true,
+        "datatype" : "TIME",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Date Hired"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "CITY",
+        "expression" : "CITY",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "City",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cCity",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "ADDRESS1",
+        "expression" : "ADDRESS1",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Address 1",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cStreetAddress",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "ADDRESS2",
+        "expression" : "ADDRESS2",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "attribute",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Address 2",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cStreetAddress",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "REGION",
+        "expression" : "REGION",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Region",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cRegion",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "POSTAL_ZONE",
+        "expression" : "POSTAL_ZONE",
+        "nullable" : true,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Postal Zone",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cPostalCode",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "COUNTRY",
+        "expression" : "COUNTRY",
+        "nullable" : false,
+        "datatype" : "NVARCHAR(MAX)",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Country",
+        "taxonomy" : [ {
+          "domain" : "cognos",
+          "family" : "cCountry",
+          "class" : "cGeoLocation"
+        } ]
+      }
+    } ],
+    "selectListControl" : "allQueryItems",
+    "propertyOverride" : [ "property._MUI_diagramNodePosition", "property._MUI_propertySetByUser_selectListControl", "selectListControl" ],
+    "classifier" : "querySubject",
+    "property" : [ {
+      "name" : "_MUI_diagramNodePosition",
+      "value" : "{\"x\":779.505498770617,\"y\":436.5107406300467}"
+    }, {
+      "name" : "_MUI_propertySetByUser_selectListControl",
+      "value" : "true"
+    } ],
+    "label" : "Location"
+  }, {
+    "identifier" : "Sales_Measures",
+    "ref" : [ "M1.Sales_Measures" ],
+    "item" : [ {
+      "queryItem" : {
+        "identifier" : "_row_id",
+        "expression" : "_row_id",
+        "hidden" : true,
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "count",
+        "description" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "comment" : "Represents the row number identifier, as originally found in the uploaded file.",
+        "label" : "Row Id"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "date_key",
+        "expression" : "date_key",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Date Key"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "product_key",
+        "expression" : "product_key",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Product Key"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "salesstaff_key",
+        "expression" : "salesstaff_key",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "identifier",
+        "regularAggregate" : "countDistinct",
+        "facetDefinition" : {
+          "enabled" : "automatic"
+        },
+        "label" : "Salesstaff Key"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "order_no",
+        "expression" : "order_no",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "usage" : "fact",
+        "regularAggregate" : "total",
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Order No"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Quantity",
+        "propertyOverride" : [ "property._MUI_propertySetByUser_splitDefinitionQueryItem" ],
+        "expression" : "Quantity",
+        "nullable" : false,
+        "datatype" : "BIGINT",
+        "splitDefinition" : [ {
+          "folderLabel" : "Day",
+          "ref" : "Date_.Day_",
+          "instanceType" : "reference"
+        } ],
+        "usage" : "fact",
+        "regularAggregate" : "total",
+        "property" : [ {
+          "name" : "_MUI_propertySetByUser_splitDefinitionQueryItem",
+          "value" : "true"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Quantity"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Unit_Cost",
+        "propertyOverride" : [ "property._MUI_propertySetByUser_regularAggregate", "regularAggregate", "property._MUI_propertySetByUser_splitDefinitionQueryItem" ],
+        "expression" : "Unit_Cost",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "splitDefinition" : [ {
+          "folderLabel" : "Day",
+          "ref" : "Date_.Day_",
+          "instanceType" : "reference"
+        } ],
+        "usage" : "fact",
+        "regularAggregate" : "average",
+        "property" : [ {
+          "name" : "_MUI_propertySetByUser_regularAggregate",
+          "value" : "true"
+        }, {
+          "name" : "_MUI_propertySetByUser_splitDefinitionQueryItem",
+          "value" : "true"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Unit Cost"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Unit_Sale_Price",
+        "propertyOverride" : [ "property._MUI_propertySetByUser_splitDefinitionQueryItem" ],
+        "expression" : "Unit_Sale_Price",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "splitDefinition" : [ {
+          "folderLabel" : "Day",
+          "ref" : "Date_.Day_",
+          "instanceType" : "reference"
+        } ],
+        "usage" : "fact",
+        "regularAggregate" : "average",
+        "property" : [ {
+          "name" : "_MUI_propertySetByUser_splitDefinitionQueryItem",
+          "value" : "true"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Unit Sale Price"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Revenue",
+        "propertyOverride" : [ "property._MUI_propertySetByUser_splitDefinitionQueryItem" ],
+        "expression" : "Revenue",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "splitDefinition" : [ {
+          "folderLabel" : "Day",
+          "ref" : "Date_.Day_",
+          "instanceType" : "reference"
+        } ],
+        "usage" : "fact",
+        "regularAggregate" : "total",
+        "property" : [ {
+          "name" : "_MUI_propertySetByUser_splitDefinitionQueryItem",
+          "value" : "true"
+        } ],
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Revenue"
+      }
+    }, {
+      "queryItem" : {
+        "identifier" : "Revenue_Quantity",
+        "propertyOverride" : [ "NEW" ],
+        "expression" : "Revenue / Quantity",
+        "nullable" : false,
+        "datatype" : "DOUBLE",
+        "usage" : "fact",
+        "regularAggregate" : "none",
+        "property" : [ {
+          "name" : "_MUI_expr",
+          "value" : "{\"inputtedName\":\"\",\"elementOperands\":[{\"id\":\"Sales_Measures.Revenue\",\"type\":\"QueryItem\"},{\"id\":\"Sales_Measures.Quantity\",\"type\":\"QueryItem\"}],\"func\":\"simpleCalculation\",\"swap\":false,\"numberOperands\":[\"\",\"\"],\"forceGlobal\":false,\"version\":\"6.0\",\"operation\":\"\\/\"}"
+        }, {
+          "name" : "_MUI_propertySetByUser_regularAggregate",
+          "value" : "true"
+        }, {
+          "name" : "_MUI_format",
+          "value" : "{\"advancedMode\":false}"
+        } ],
+        "format" : "{\"formatGroup\":{\"percentFormat\":{}}}",
+        "facetDefinition" : {
+          "enabled" : "false"
+        },
+        "label" : "Revenue / Quantity"
+      }
+    } ],
+    "selectListControl" : "allQueryItems",
+    "propertyOverride" : [ "property._MUI_diagramNodePosition", "property._MUI_propertySetByUser_selectListControl", "selectListControl" ],
+    "classifier" : "querySubject",
+    "property" : [ {
+      "name" : "_MUI_diagramNodePosition",
+      "value" : "{\"x\":577.6533971606066,\"y\":209.81085148363485}"
+    }, {
+      "name" : "_MUI_propertySetByUser_selectListControl",
+      "value" : "true"
+    } ],
+    "label" : "Sales Measures"
+  }, {
+    "identifier" : "Page1_1",
+    "ref" : [ "M2.Page1_1" ],
+    "instanceType" : "reference",
+    "classifier" : "querySubject"
+  } ],
+  "property" : [ {
+    "name" : "_MUI_diagramZoomAndPan",
+    "value" : "{\"scale\":1,\"translate\":[0,0]}"
+  } ],
+  "lastModified" : "2026-07-09T06:57:41.855Z",
+  "relationship" : [ {
+    "identifier" : "Date_Sales_Measures",
+    "left" : {
+      "ref" : "Date_",
+      "mincard" : "one",
+      "maxcard" : "one"
+    },
+    "idForExpression" : "Date_Sales_Measures",
+    "link" : [ {
+      "leftRef" : "date_key",
+      "rightRef" : "date_key"
+    } ],
+    "property" : [ {
+      "name" : "SystemDiscovered",
+      "value" : "true"
+    } ],
+    "description" : "Date_<-->Sales_Measures",
+    "right" : {
+      "ref" : "Sales_Measures",
+      "mincard" : "one",
+      "maxcard" : "many"
+    },
+    "label" : "Date_<-->Sales_Measures"
+  }, {
+    "identifier" : "Location_Sales_Measures",
+    "left" : {
+      "ref" : "Location",
+      "mincard" : "one",
+      "maxcard" : "one"
+    },
+    "idForExpression" : "Location_Sales_Measures",
+    "link" : [ {
+      "leftRef" : "salesstaff_key",
+      "rightRef" : "salesstaff_key"
+    } ],
+    "property" : [ {
+      "name" : "SystemDiscovered",
+      "value" : "true"
+    } ],
+    "description" : "Location<-->Sales_Measures",
+    "right" : {
+      "ref" : "Sales_Measures",
+      "mincard" : "one",
+      "maxcard" : "many"
+    },
+    "label" : "Location<-->Sales_Measures"
+  }, {
+    "identifier" : "Product_Sales_Measures",
+    "propertyOverride" : [ "NEW" ],
+    "left" : {
+      "ref" : "Product",
+      "mincard" : "one",
+      "maxcard" : "one"
+    },
+    "idForExpression" : "Product_Sales_Measures",
+    "link" : [ {
+      "leftRef" : "product_code",
+      "rightRef" : "product_key"
+    } ],
+    "right" : {
+      "ref" : "Sales_Measures",
+      "mincard" : "one",
+      "maxcard" : "many"
+    },
+    "joinFilterType" : "none",
+    "label" : "Product<-->Sales_Measures"
+  } ],
+  "metadataTreeView" : [ {
+    "folderItem" : [ {
+      "ref" : "Page1_1"
+    }, {
+      "ref" : "Date_"
+    }, {
+      "ref" : "Product"
+    }, {
+      "ref" : "Location"
+    }, {
+      "ref" : "Sales_Measures"
+    } ]
+  } ]
+}
