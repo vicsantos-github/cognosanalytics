@@ -1,0 +1,171 @@
+<report xmlns="http://developer.cognos.com/schemas/report/17.6/" expressionLocale="en" useStyleVersion="11.6">
+  				
+				
+  <drillBehavior/>
+  				
+  <layouts>
+    <layout>
+      <reportPages>
+        <page name="Page1">
+          <style>
+            <defaultStyles>
+              <defaultStyle refStyle="pg"/>
+            </defaultStyles>
+          </style>
+          <pageBody>
+            <style>
+              <defaultStyles>
+                <defaultStyle refStyle="pb"/>
+              </defaultStyles>
+            </style>
+            <contents>
+              <list horizontalPagination="true" name="List1" refQuery="Query1">
+                			
+			
+			
+			
+                <noDataHandler>
+                  				
+                  <contents>
+                    					
+                    <block>
+                      						
+                      <contents>
+                        							
+                        <textItem>
+                          								
+                          <dataSource>
+                            									
+                            <staticValue>No Data Available</staticValue>
+                            								
+                          </dataSource>
+                          							
+                        </textItem>
+                        						
+                      </contents>
+                      						
+                      <style>
+                        							
+                        <CSS value="padding:16px;"/>
+                        						
+                      </style>
+                      					
+                    </block>
+                    				
+                  </contents>
+                  			
+                </noDataHandler>
+                			
+                <style>
+                  				
+                  <CSS value="border-collapse:collapse"/>
+                  				
+                  <defaultStyles>
+                    					
+                    <defaultStyle refStyle="ls"/>
+                    				
+                  </defaultStyles>
+                  			
+                </style>
+                		
+                <listColumns>
+                  <listColumn>
+                    <listColumnTitle>
+                      <style>
+                        <defaultStyles>
+                          <defaultStyle refStyle="lt"/>
+                        </defaultStyles>
+                      </style>
+                      <contents>
+                        <textItem>
+                          <dataSource>
+                            <dataItemLabel refDataItem="Suburb"/>
+                          </dataSource>
+                        </textItem>
+                      </contents>
+                    </listColumnTitle>
+                    <listColumnBody>
+                      <style>
+                        <defaultStyles>
+                          <defaultStyle refStyle="lc"/>
+                        </defaultStyles>
+                      </style>
+                      <contents>
+                        <textItem>
+                          <dataSource>
+                            <dataItemValue refDataItem="Suburb"/>
+                          </dataSource>
+                        </textItem>
+                      </contents>
+                    </listColumnBody>
+                  </listColumn>
+                  <listColumn>
+                    <listColumnTitle>
+                      <style>
+                        <defaultStyles>
+                          <defaultStyle refStyle="lt"/>
+                        </defaultStyles>
+                      </style>
+                      <contents>
+                        <textItem>
+                          <dataSource>
+                            <dataItemLabel refDataItem="Error Column"/>
+                          </dataSource>
+                        </textItem>
+                      </contents>
+                    </listColumnTitle>
+                    <listColumnBody>
+                      <style>
+                        <defaultStyles>
+                          <defaultStyle refStyle="lm"/>
+                        </defaultStyles>
+                      </style>
+                      <contents>
+                        <textItem>
+                          <dataSource>
+                            <dataItemValue refDataItem="Error Column"/>
+                          </dataSource>
+                        </textItem>
+                      </contents>
+                    </listColumnBody>
+                  </listColumn>
+                </listColumns>
+              </list>
+            </contents>
+          </pageBody>
+          <XMLAttributes>
+            <XMLAttribute name="RS_legacyDrillDown" output="no" value="0"/>
+          </XMLAttributes>
+        </page>
+      </reportPages>
+    </layout>
+  </layouts>
+  			
+  <XMLAttributes>
+    <XMLAttribute name="RS_CreateExtendedDataItems" output="no" value="true"/>
+    <XMLAttribute name="listSeparator" output="no" value=","/>
+    <XMLAttribute name="decimalSeparator" output="no" value="."/>
+    <XMLAttribute name="RS_modelModificationTime" output="no" value="2021-03-07T23:37:39.790Z"/>
+  </XMLAttributes>
+  <queries>
+    <query name="Query1">
+      <source>
+        <model/>
+      </source>
+      <selection>
+        <dataItem aggregate="none" name="Suburb" rollupAggregate="none">
+          <expression>[C].[C_Australian_Towns_Data_Module].[Australian_Towns_Revenue_csv].[Suburb]</expression>
+          <XMLAttributes>
+            <XMLAttribute name="RS_dataType" output="no" value="3"/>
+            <XMLAttribute name="RS_dataUsage" output="no" value="1"/>
+          </XMLAttributes>
+        </dataItem>
+        <dataItem name="Error Column">
+          <expression>xbxzn</expression>
+        </dataItem>
+      </selection>
+    </query>
+  </queries>
+  <modelPath type="module">/content/folder[@name='Packages']/module[@name='Australian Towns Data Module']</modelPath>
+  <reportName>Error Report</reportName>
+</report>
