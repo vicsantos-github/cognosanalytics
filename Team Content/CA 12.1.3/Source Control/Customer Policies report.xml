@@ -1,0 +1,196 @@
+<report xmlns="http://developer.cognos.com/schemas/report/17.6/" expressionLocale="en-us" useStyleVersion="11.6">
+  				
+				
+  <drillBehavior/>
+  				
+  <layouts>
+    <layout>
+      <reportPages>
+        <page name="Page1">
+          <style>
+            <defaultStyles>
+              <defaultStyle refStyle="pg"/>
+            </defaultStyles>
+          </style>
+          <pageBody>
+            <style>
+              <defaultStyles>
+                <defaultStyle refStyle="pb"/>
+              </defaultStyles>
+            </style>
+            <contents>
+              <crosstab horizontalPagination="true" name="Crosstab1" refQuery="Query1">
+                			
+                <crosstabCorner>
+                  				
+                  <contents>
+                    <textItem>
+                      <dataSource>
+                        <dataItemLabel refDataItem="Total Claim Amount"/>
+                      </dataSource>
+                    </textItem>
+                  </contents>
+                  				
+                  <style>
+                    					
+                    <defaultStyles>
+                      						
+                      <defaultStyle refStyle="xm"/>
+                      					
+                    </defaultStyles>
+                    				
+                  </style>
+                  			
+                </crosstabCorner>
+                			
+			
+			
+                <noDataHandler>
+                  				
+                  <contents>
+                    					
+                    <block>
+                      						
+                      <contents>
+                        							
+                        <textItem>
+                          								
+                          <dataSource>
+                            									
+                            <staticValue>No Data Available</staticValue>
+                            								
+                          </dataSource>
+                          							
+                        </textItem>
+                        						
+                      </contents>
+                      						
+                      <style>
+                        							
+                        <CSS value="padding:16px;"/>
+                        						
+                      </style>
+                      					
+                    </block>
+                    				
+                  </contents>
+                  			
+                </noDataHandler>
+                			
+                <style>
+                  				
+                  <CSS value="border-collapse:collapse"/>
+                  				
+                  <defaultStyles>
+                    					
+                    <defaultStyle refStyle="xt"/>
+                    				
+                  </defaultStyles>
+                  			
+                </style>
+                		
+                <crosstabRows>
+                  <crosstabNode>
+                    <crosstabNodeMembers>
+                      <crosstabNodeMember refDataItem="Policy Type">
+                        <style>
+                          <defaultStyles>
+                            <defaultStyle refStyle="ml"/>
+                          </defaultStyles>
+                        </style>
+                        <contents>
+                          <textItem>
+                            <dataSource>
+                              <memberCaption/>
+                            </dataSource>
+                          </textItem>
+                        </contents>
+                      </crosstabNodeMember>
+                    </crosstabNodeMembers>
+                  </crosstabNode>
+                </crosstabRows>
+                <defaultMeasure refDataItem="Total Claim Amount"/>
+                <crosstabFactCell>
+                  <contents>
+                    <textItem>
+                      <dataSource>
+                        <cellValue/>
+                      </dataSource>
+                    </textItem>
+                  </contents>
+                  <style>
+                    <defaultStyles>
+                      <defaultStyle refStyle="mv"/>
+                    </defaultStyles>
+                  </style>
+                </crosstabFactCell>
+                <crosstabColumns>
+                  <crosstabNode>
+                    <crosstabNodeMembers>
+                      <crosstabNodeMember refDataItem="State">
+                        <style>
+                          <defaultStyles>
+                            <defaultStyle refStyle="ml"/>
+                          </defaultStyles>
+                        </style>
+                        <contents>
+                          <textItem>
+                            <dataSource>
+                              <memberCaption/>
+                            </dataSource>
+                          </textItem>
+                        </contents>
+                      </crosstabNodeMember>
+                    </crosstabNodeMembers>
+                  </crosstabNode>
+                </crosstabColumns>
+              </crosstab>
+            </contents>
+          </pageBody>
+          <XMLAttributes>
+            <XMLAttribute name="RS_legacyDrillDown" output="no" value="0"/>
+          </XMLAttributes>
+        </page>
+      </reportPages>
+    </layout>
+  </layouts>
+  			
+  <XMLAttributes>
+    <XMLAttribute name="RS_CreateExtendedDataItems" output="no" value="true"/>
+    <XMLAttribute name="listSeparator" output="no" value=","/>
+    <XMLAttribute name="decimalSeparator" output="no" value="."/>
+    <XMLAttribute name="RS_modelModificationTime" output="no" value="2026-08-10T02:29:21.507Z"/>
+  </XMLAttributes>
+  <queries>
+    <query name="Query1">
+      <source>
+        <model/>
+      </source>
+      <selection>
+        <dataItem aggregate="none" name="Policy Type" rollupAggregate="none">
+          <expression>[C].[C_Customer_Policies_data_modiule].[Customer_Vehilcle_Policies].[Policy_Type]</expression>
+          <XMLAttributes>
+            <XMLAttribute name="RS_dataType" output="no" value="3"/>
+            <XMLAttribute name="RS_dataUsage" output="no" value="1"/>
+          </XMLAttributes>
+        </dataItem>
+        <dataItem aggregate="total" name="Total Claim Amount">
+          <expression>[C].[C_Customer_Policies_data_modiule].[Customer_Vehilcle_Policies].[Total_Claim_Amount]</expression>
+          <XMLAttributes>
+            <XMLAttribute name="RS_dataType" output="no" value="2"/>
+            <XMLAttribute name="RS_dataUsage" output="no" value="2"/>
+          </XMLAttributes>
+        </dataItem>
+        <dataItem aggregate="none" name="State" rollupAggregate="none">
+          <expression>[C].[C_Customer_Policies_data_modiule].[Customer_Vehilcle_Policies].[State_]</expression>
+          <XMLAttributes>
+            <XMLAttribute name="RS_dataType" output="no" value="3"/>
+            <XMLAttribute name="RS_dataUsage" output="no" value="1"/>
+          </XMLAttributes>
+        </dataItem>
+      </selection>
+    </query>
+  </queries>
+  <modelPath type="module">/content/folder[@name='CA 12.1.3']/folder[@name='Source Control']/module[@name='Customer Policies data module']</modelPath>
+  <reportName>Customer Policies report</reportName>
+</report>
