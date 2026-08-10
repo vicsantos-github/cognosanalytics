@@ -20,9 +20,7 @@
             </style>
             <contents>
               <crosstab horizontalPagination="true" name="Crosstab1" refQuery="Query1">
-                			
                 <crosstabCorner>
-                  				
                   <contents>
                     <textItem>
                       <dataSource>
@@ -30,65 +28,34 @@
                       </dataSource>
                     </textItem>
                   </contents>
-                  				
                   <style>
-                    					
                     <defaultStyles>
-                      						
                       <defaultStyle refStyle="xm"/>
-                      					
                     </defaultStyles>
-                    				
                   </style>
-                  			
                 </crosstabCorner>
-                			
-			
-			
                 <noDataHandler>
-                  				
                   <contents>
-                    					
                     <block>
-                      						
                       <contents>
-                        							
                         <textItem>
-                          								
                           <dataSource>
-                            									
                             <staticValue>No Data Available</staticValue>
-                            								
                           </dataSource>
-                          							
                         </textItem>
-                        						
                       </contents>
-                      						
                       <style>
-                        							
                         <CSS value="padding:16px;"/>
-                        						
                       </style>
-                      					
                     </block>
-                    				
                   </contents>
-                  			
                 </noDataHandler>
-                			
                 <style>
-                  				
                   <CSS value="border-collapse:collapse"/>
-                  				
                   <defaultStyles>
-                    					
                     <defaultStyle refStyle="xt"/>
-                    				
                   </defaultStyles>
-                  			
                 </style>
-                		
                 <crosstabRows>
                   <crosstabNode>
                     <crosstabNodeMembers>
@@ -107,6 +74,26 @@
                         </contents>
                       </crosstabNodeMember>
                     </crosstabNodeMembers>
+                    <crosstabNestedNodes>
+                      <crosstabNode>
+                        <crosstabNodeMembers>
+                          <crosstabNodeMember refDataItem="Education">
+                            <style>
+                              <defaultStyles>
+                                <defaultStyle refStyle="ml"/>
+                              </defaultStyles>
+                            </style>
+                            <contents>
+                              <textItem>
+                                <dataSource>
+                                  <memberCaption/>
+                                </dataSource>
+                              </textItem>
+                            </contents>
+                          </crosstabNodeMember>
+                        </crosstabNodeMembers>
+                      </crosstabNode>
+                    </crosstabNestedNodes>
                   </crosstabNode>
                 </crosstabRows>
                 <defaultMeasure refDataItem="Total Claim Amount"/>
@@ -183,6 +170,13 @@
         </dataItem>
         <dataItem aggregate="none" name="State" rollupAggregate="none">
           <expression>[C].[C_Customer_Policies_data_modiule].[Customer_Vehilcle_Policies].[State_]</expression>
+          <XMLAttributes>
+            <XMLAttribute name="RS_dataType" output="no" value="3"/>
+            <XMLAttribute name="RS_dataUsage" output="no" value="1"/>
+          </XMLAttributes>
+        </dataItem>
+        <dataItem aggregate="none" name="Education" rollupAggregate="none">
+          <expression>[C].[C_Customer_Policies_data_modiule].[Customer_Vehilcle_Policies].[Education]</expression>
           <XMLAttributes>
             <XMLAttribute name="RS_dataType" output="no" value="3"/>
             <XMLAttribute name="RS_dataUsage" output="no" value="1"/>
